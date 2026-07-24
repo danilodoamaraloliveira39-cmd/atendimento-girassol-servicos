@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girassol Serviços Elétricos - Instalação e Manutenção Fotovoltaica</title>
+    <style>
+        :root {
+            --primary-color: #FFD700; /* Amarelo Girassol */
+            --secondary-color: #2C3E50; /* Azul Escuro Moderno */
+            --accent-color: #27AE60; /* Verde Sustentabilidade */
+            --text-color: #333;
+            --light-bg: #F4F7F6;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 32px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            color: var(--primary-color);
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.3s, background-color 0.3s;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: #e6c200;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--light-bg);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            transition: translateY 0.3s;
+            border-bottom: 5px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        /* Info Section */
+        .company-info {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .info-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .info-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .info-text h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .info-details {
+            background-color: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .info-item strong {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #2c3e50;
+            font-size: 14px;
+        }
+
+        /* WhatsApp Floating */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            text-decoration: none;
+            z-index: 1001;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            nav { display: none; }
+            .info-flex { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <span class="logo-icon">🌻</span>
+                <div class="logo-text">
+                    GIRASSOL
+                    <span>Serviços Elétricos</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#empresa">A Empresa</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Energia Limpa para o seu Futuro</h1>
+            <p>Especialistas em instalação e manutenção de sistemas fotovoltaicos. Economize na conta de luz e ajude o planeta com a Girassol.</p>
+            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20energia%20solar." class="cta-button">Solicitar Orçamento Grátis</a>
+        </div>
+    </section>
+
+    <section class="services" id="servicos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Soluções completas em engenharia elétrica e solar</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">☀️</span>
+                    <h3>Instalação Fotovoltaica</h3>
+                    <p>Projetos personalizados para residências, comércios e indústrias com a máxima eficiência energética.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🛠️</span>
+                    <h3>Manutenção Elétrica</h3>
+                    <p>Manutenção preventiva e corretiva em sistemas elétricos de baixa e média tensão.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">📉</span>
+                    <h3>Consultoria Energética</h3>
+                    <p>Análise de consumo e viabilidade técnica para redução drástica nos custos com energia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="company-info" id="empresa">
+        <div class="container">
+            <div class="info-flex">
+                <div class="info-text">
+                    <h2>Compromisso com a Excelência</h2>
+                    <p>A <strong>GIRASSOL SERVICOS ELETRICOS INSTALACAO E MANUTENCAO FOTOVOLTAICA LTDA</strong> é referência em soluções de energia renovável em São Paulo.</p>
+                    <p>Com registro sob o CNAE 43.21-5-00, atuamos com rigor técnico e segurança em todas as etapas do seu projeto elétrico.</p>
+                </div>
+                <div class="info-details">
+                    <div class="info-item">
+                        <span>📍</span>
+                        <div>
+                            <strong>Endereço:</strong><br>
+                            R Azevedo Soares, 2031<br>
+                            Tatuapé - São Paulo/SP<br>
+                            CEP: 03.322-002
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span>📋</span>
+                        <div>
+                            <strong>Dados Corporativos:</strong><br>
+                            CNPJ: 61.464.067/0001-71<br>
+                            CNAE: 43.21-5-00
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Girassol Elétrica</h4>
+                    <p>Iluminando caminhos com energia sustentável e serviços de alta qualidade.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="#inicio" style="color: #bdc3c7; text-decoration: none;">Início</a></li>
+                        <li><a href="#servicos" style="color: #bdc3c7; text-decoration: none;">Serviços</a></li>
+                        <li><a href="#empresa" style="color: #bdc3c7; text-decoration: none;">A Empresa</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Atendimento</h4>
+                    <p>Segunda a Sexta: 08h às 18h</p>
+                    <p>São Paulo - SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GIRASSOL SERVICOS ELETRICOS. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank">
+        <span>💬</span>
+    </a>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
