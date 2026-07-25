@@ -3,17 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Girassol Serviços Elétricos - Instalação e Manutenção Fotovoltaica</title>
+    <title>INTERNET SUPORTE - Central de Ajuda</title>
     <style>
-        :root {
-            --primary-color: #FFD700; /* Amarelo Girassol */
-            --secondary-color: #2C3E50; /* Azul Escuro Moderno */
-            --accent-color: #27AE60; /* Verde Sustentabilidade */
-            --text-color: #333;
-            --light-bg: #F4F7F6;
-            --white: #FFFFFF;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -21,401 +12,442 @@
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-bg);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            color: #333;
         }
 
         /* Header */
         header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 15px 0;
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
         }
 
-        .header-content {
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo-container {
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
         .logo-icon {
-            font-size: 32px;
-        }
-
-        .logo-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--secondary-color);
-            line-height: 1.1;
-        }
-
-        .logo-text span {
-            color: var(--primary-color);
-            display: block;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav ul {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
             display: flex;
-            list-style: none;
-            gap: 25px;
+            align-items: center;
+            justify-content: center;
+            color: #dc2626;
+            font-weight: bold;
         }
 
         nav a {
+            color: white;
             text-decoration: none;
-            color: var(--secondary-color);
-            font-weight: 600;
-            transition: color 0.3s;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: opacity 0.3s;
         }
 
         nav a:hover {
-            color: var(--accent-color);
+            opacity: 0.8;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 100px 0;
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            padding: 80px 20px;
             text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
-            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .hero p {
             font-size: 20px;
-            max-width: 800px;
-            margin: 0 auto 30px;
+            margin-bottom: 40px;
+            opacity: 0.95;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 15px 35px;
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: transform 0.3s, background-color 0.3s;
-            text-transform: uppercase;
+            display: inline-block;
         }
 
-        .cta-button:hover {
-            transform: scale(1.05);
-            background-color: #e6c200;
+        .btn-primary {
+            background: white;
+            color: #dc2626;
         }
 
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background-color: var(--white);
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
         }
 
-        .section-title h2 {
+        .btn-secondary:hover {
+            background: white;
+            color: #dc2626;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+        }
+
+        section h2 {
             font-size: 36px;
-            color: var(--secondary-color);
-            position: relative;
-            padding-bottom: 15px;
+            color: #dc2626;
+            margin-bottom: 40px;
+            text-align: center;
         }
 
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary-color);
+        /* Serviços */
+        .servicos {
+            background: #f9fafb;
         }
 
-        .services-grid {
+        .servicos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
-        .service-card {
-            background-color: var(--light-bg);
-            padding: 40px;
-            border-radius: 15px;
+        .servico-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            border-left: 5px solid #dc2626;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
             text-align: center;
-            transition: translateY 0.3s;
-            border-bottom: 5px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-bottom-color: var(--primary-color);
-        }
-
-        .service-icon {
-            font-size: 50px;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .service-card h3 {
-            margin-bottom: 15px;
-            color: var(--secondary-color);
-        }
-
-        /* Info Section */
-        .company-info {
-            padding: 80px 0;
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-
-        .info-flex {
             display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
+            flex-direction: column;
             align-items: center;
         }
 
-        .info-text {
-            flex: 1;
-            min-width: 300px;
+        .servico-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
 
-        .info-text h2 {
-            color: var(--primary-color);
+        .servico-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #dc2626;
+        }
+
+        .servico-card h3 {
+            color: #dc2626;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .servico-card p {
+            color: #666;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .servico-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .servico-card .btn-atendimento {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+        }
+
+        .servico-card .btn-atendimento:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.5);
+            background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: white;
+            font-size: 36px;
             margin-bottom: 20px;
         }
 
-        .info-details {
-            background-color: rgba(255,255,255,0.1);
-            padding: 30px;
-            border-radius: 10px;
-            flex: 1;
-            min-width: 300px;
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
 
-        .info-item {
-            margin-bottom: 15px;
+        .cta-buttons {
             display: flex;
-            align-items: flex-start;
             gap: 15px;
-        }
-
-        .info-item strong {
-            color: var(--primary-color);
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         /* Footer */
         footer {
-            background-color: #1a252f;
-            color: #bdc3c7;
-            padding: 50px 0 20px;
+            background: #1f2937;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .footer-col h4 {
-            color: var(--white);
-            margin-bottom: 20px;
-            font-size: 18px;
+        .footer-content p {
+            margin-bottom: 10px;
         }
 
         .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #2c3e50;
+            color: #999;
             font-size: 14px;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 20px;
         }
 
-        /* WhatsApp Floating */
-        .whatsapp-float {
+        /* WhatsApp Button */
+        .whatsapp-btn {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
+            bottom: 20px;
+            right: 20px;
             width: 60px;
             height: 60px;
+            background: #25d366;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            color: white;
             text-decoration: none;
-            z-index: 1001;
-            transition: transform 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s;
+            z-index: 999;
         }
 
-        .whatsapp-float:hover {
+        .whatsapp-btn:hover {
             transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         }
 
+        /* Responsivo */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            nav { display: none; }
-            .info-flex { flex-direction: column; }
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin-left: 15px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            .hero-buttons,
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn,
+            .cta-buttons .btn {
+                width: 100%;
+            }
+
+            .servicos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 <body>
-
+    <!-- Header -->
     <header>
-        <div class="container header-content">
-            <div class="logo-container">
-                <span class="logo-icon">🌻</span>
-                <div class="logo-text">
-                    GIRASSOL
-                    <span>Serviços Elétricos</span>
-                </div>
+        <div class="header-container">
+            <div class="">
+                <img src="logo_clarosuporte.png" alt="INTERNET SUPORTE" style="height: 50px; border-radius: 4px;">
             </div>
             <nav>
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#empresa">A Empresa</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
+                <a href="#servicos">Serviços</a>
+                <a href="#contato">Contato</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero" id="inicio">
-        <div class="container">
-            <h1>Energia Limpa para o seu Futuro</h1>
-            <p>Especialistas em instalação e manutenção de sistemas fotovoltaicos. Economize na conta de luz e ajude o planeta com a Girassol.</p>
-            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20energia%20solar." class="cta-button">Solicitar Atendimento</a>
-        </div>
-    </section>
-
-    <section class="services" id="servicos">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nossos Serviços</h2>
-                <p>Soluções completas em engenharia elétrica e solar</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <span class="service-icon">☀️</span>
-                    <h3>Instalação Fotovoltaica</h3>
-                    <p>Projetos personalizados para residências, comércios e indústrias com a máxima eficiência energética.</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-icon">🛠️</span>
-                    <h3>Manutenção Elétrica</h3>
-                    <p>Manutenção preventiva e corretiva em sistemas elétricos de baixa e média tensão.</p>
-                </div>
-                <div class="service-card">
-                    <span class="service-icon">📉</span>
-                    <h3>Consultoria Energética</h3>
-                    <p>Análise de consumo e viabilidade técnica para redução drástica nos custos com energia.</p>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Bem-vindo à INTERNET SUPORTE</h1>
+            <p>Suporte rápido e eficiente para seus problemas de conexão</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/5551982430237?text=Olá%20CLAROSUPORTE!%20Gostaria%20de%20iniciar%20um%20atendimento." class="btn btn-primary">💬 Iniciar Atendimento</a>
+                <a href="#servicos" class="btn btn-secondary">Ver Serviços</a>
             </div>
         </div>
     </section>
 
-    <section class="company-info" id="empresa">
+    <!-- Serviços -->
+    <section class="servicos" id="servicos">
         <div class="container">
-            <div class="info-flex">
-                <div class="info-text">
-                    <h2>Compromisso com a Excelência</h2>
-                    <p>A <strong>GIRASSOL SERVICOS ELETRICOS INSTALACAO E MANUTENCAO FOTOVOLTAICA LTDA</strong> é referência em soluções de energia renovável em São Paulo.</p>
-                    <p>Com registro sob o CNAE 43.21-5-00, atuamos com rigor técnico e segurança em todas as etapas do seu projeto elétrico.</p>
+            <h2>Nossos Serviços</h2>
+            <div class="servicos-grid">
+                <!-- Suporte -->
+                <div class="servico-card">
+                    <div class="servico-icon">🎧</div>
+                    <h3>Suporte</h3>
+                    <p>Atendimento especializado para resolver seus problemas de forma rápida.</p>
+                    <a href="https://wa.me/5551982430237?text=Olá%20CLAROSUPORTE!%20Preciso%20de%20suporte%20técnico." class="btn btn-atendimento">Solicitar Atendimento</a>
                 </div>
-                <div class="info-details">
-                    <div class="info-item">
-                        <span>📍</span>
-                        <div>
-                            <strong>Endereço:</strong><br>
-                            R Azevedo Soares, 2031<br>
-                            Tatuapé - São Paulo/SP<br>
-                            CEP: 03.322-002
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <span>📋</span>
-                        <div>
-                            <strong>Dados Corporativos:</strong><br>
-                            CNPJ: 61.464.067/0001-71<br>
-                            CNAE: 43.21-5-00
-                        </div>
-                    </div>
+
+                <!-- Internet Lenta -->
+                <div class="servico-card">
+                    <div class="servico-icon">📶</div>
+                    <h3>Internet Lenta</h3>
+                    <p>Diagnosticamos e resolvemos problemas de velocidade de conexão.</p>
+                    <a href="https://wa.me/5551982430237?text=Olá%20CLAROSUPORTE!%20Minha%20internet%20está%20lenta." class="btn btn-atendimento">Solicitar Atendimento</a>
+                </div>
+
+                <!-- Solicitar Fatura -->
+                <div class="servico-card">
+                    <div class="servico-icon">📄</div>
+                    <h3>Solicitar Fatura</h3>
+                    <p>Solicite sua fatura de forma rápida e fácil via WhatsApp.</p>
+                    <a href="https://wa.me/5551982430237?text=Olá%20CLAROSUPORTE!%20Gostaria%20de%20solicitar%20minha%20fatura." class="btn btn-atendimento">Solicitar Atendimento</a>
+                </div>
+
+                <!-- Outros Assuntos -->
+                <div class="servico-card">
+                    <div class="servico-icon">💬</div>
+                    <h3>Outros Assuntos</h3>
+                    <p>Fale conosco sobre qualquer tema relacionado aos nossos serviços.</p>
+                    <a href="https://wa.me/5551982430237?text=Olá%20CLAROSUPORTE!%20Tenho%20uma%20dúvida." class="btn btn-atendimento">Solicitar Atendimento</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CTA Section -->
+    <section class="cta" id="contato">
+        <div class="container">
+            <h2>Pronto para resolver seu problema?</h2>
+            <p>Clique no botão abaixo e inicie um atendimento via WhatsApp agora mesmo!</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/5551982430237?text=Olá%20CLAROSUPORTE!%20Gostaria%20de%20iniciar%20um%20atendimento." class="btn btn-primary">💬 Iniciar Atendimento</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Girassol Elétrica</h4>
-                    <p>Iluminando caminhos com energia sustentável e serviços de alta qualidade.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Links Rápidos</h4>
-                    <ul style="list-style: none;">
-                        <li><a href="#inicio" style="color: #bdc3c7; text-decoration: none;">Início</a></li>
-                        <li><a href="#servicos" style="color: #bdc3c7; text-decoration: none;">Serviços</a></li>
-                        <li><a href="#empresa" style="color: #bdc3c7; text-decoration: none;">A Empresa</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Atendimento</h4>
-                    <p>Segunda a Sexta: 08h às 18h</p>
-                    <p>São Paulo - SP</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 GIRASSOL SERVICOS ELETRICOS. Todos os direitos reservados.</p>
-            </div>
+        <div class="footer-content">
+            <p><strong>NETSUPORTE - Central de Ajuda</strong></p>
+            <p>Estamos aqui para ajudar você 24/7</p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NETSUPORTE. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank">
-        <span>💬</span>
-    </a>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5551982430237?text=Olá%20CLAROSUPORTE!%20Gostaria%20de%20iniciar%20um%20atendimento." class="whatsapp-btn" title="Fale conosco no WhatsApp">💬</a>
 
     <script>
+        // Smooth scroll para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>
